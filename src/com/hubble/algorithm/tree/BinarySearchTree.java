@@ -8,7 +8,11 @@ public class BinarySearchTree<T extends Comparable<T>> extends BinaryTreeNode<T>
 	}
 	
 	/**
+<<<<<<< HEAD
 	 * å¢žåŠ ä¸€ä¸ªèŠ‚ç‚¹ O(Lg(Height))
+=======
+	 * Ôö¼ÓÒ»¸ö½Úµã¡£ O(Lg(Height))
+>>>>>>> 6f920c57678c991f10f48b0553c13b2904779570
 	 * @param newNode
 	 * @return
 	 */
@@ -45,7 +49,11 @@ public class BinarySearchTree<T extends Comparable<T>> extends BinaryTreeNode<T>
 	}
 	
 	/**
+<<<<<<< HEAD
 	 * æŸ¥æ‰¾ä¸€ä¸ªèŠ‚ç‚¹O(Lg(Height))
+=======
+	 * ËÑË÷½Úµã £¨O(Lg(Height))£©
+>>>>>>> 6f920c57678c991f10f48b0553c13b2904779570
 	 * @param node
 	 */
 	public BinarySearchTree<T> search(T t) {
