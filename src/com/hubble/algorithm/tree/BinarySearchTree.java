@@ -63,11 +63,7 @@ public class BinarySearchTree<T extends Comparable<T>> extends BinaryTreeNode<T>
 				node = node.mRight;
 			}
 		}
-		
 		return null;
 	}
-	
-	
-	
 
 }
