@@ -8,11 +8,7 @@ public class BinarySearchTree<T extends Comparable<T>> extends BinaryTreeNode<T>
 	}
 	
 	/**
-<<<<<<< HEAD
 	 * 增加一个节点 O(Lg(Height))
-=======
-	 * ����һ���ڵ㡣 O(Lg(Height))
->>>>>>> 6f920c57678c991f10f48b0553c13b2904779570
 	 * @param newNode
 	 * @return
 	 */
@@ -49,11 +45,7 @@ public class BinarySearchTree<T extends Comparable<T>> extends BinaryTreeNode<T>
 	}
 	
 	/**
-<<<<<<< HEAD
 	 * 查找一个节点O(Lg(Height))
-=======
-	 * �����ڵ� ��O(Lg(Height))��
->>>>>>> 6f920c57678c991f10f48b0553c13b2904779570
 	 * @param node
 	 */
 	public BinarySearchTree<T> search(T t) {
@@ -71,6 +63,23 @@ public class BinarySearchTree<T extends Comparable<T>> extends BinaryTreeNode<T>
 				node = node.mRight;
 			}
 		}
+		
+		return null;
+	}
+	
+	/**
+	 * 删除一个节点 O(Lg(Height))
+	 * 基于一个性质： 二叉搜索树 节点左边的值都小于 节点值， 节点右边的值都大于 节点的值。 </br>
+	 * 所以，若要删除一个节点， 将节点右边的最小值节点替换掉当前节点（这样并不会改变二叉搜索树的性质），并且 再删除掉右边最小值的节点即可。
+	 * @param t
+	 * @return
+	 */
+	public  BinarySearchTree<T> remove(T t) {
+		BinaryTreeNode<T> node = search(t);
+		if(node == null)
+				return null;
+		
+		
 		
 		return null;
 	}
