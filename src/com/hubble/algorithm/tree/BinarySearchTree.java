@@ -46,6 +46,7 @@ public class BinarySearchTree<T extends Comparable<T>> extends BinaryTreeNode<T>
 	
 	/**
 	 * 查找一个节点O(Lg(Height))
+
 	 * @param node
 	 */
 	public BinarySearchTree<T> search(T t) {
@@ -63,10 +64,9 @@ public class BinarySearchTree<T extends Comparable<T>> extends BinaryTreeNode<T>
 				node = node.mRight;
 			}
 		}
-		
 		return null;
 	}
-	
+
 	/**
 	 * 删除一个节点 O(Lg(Height))
 	 * 基于一个性质： 二叉搜索树 节点左边的值都小于 节点值， 节点右边的值都大于 节点的值。 </br>
@@ -83,8 +83,6 @@ public class BinarySearchTree<T extends Comparable<T>> extends BinaryTreeNode<T>
 		
 		return null;
 	}
-	
-	
-	
+
 
 }
