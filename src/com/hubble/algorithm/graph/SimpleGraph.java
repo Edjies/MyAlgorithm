@@ -65,5 +65,49 @@ public class SimpleGraph implements Graph {
 	public Iterable<Integer> adj(int V) {
 		return adj[V];
 	}
+	
+	/**
+	 * 图是否有环</br>
+	 * 在不考虑自环和平行边的情况下：</br>
+	 *	在进行深度搜索过程中， 若搜到一个被标记的节点， 并且该节点不是上一次的递归节点，则表示存在环（存在从其它节点达到该节点的路径）</br>
+	 * @return
+	 */
+	public boolean isCycle() {
+		boolean[] mark = new boolean[this.V()];
+		for(int i = 0; i < V();  i++) {
+			if(!mark[i]) {
+				return dfs(i, i, mark);// 函数的递归返回，（在某一个递归阶段，若函数有明确的返回值，则递归结束，执行递归返回）
+			}
+		}
+		
+		return false;
+	}
+	
+	/**
+	 * 
+	 * @param s 需要搜索的节点
+	 * @param r 进行环判断的节点
+	 * @param mark
+	 * @return
+	 */
+	private boolean dfs(int s, int u, boolean[] mark) {
+		mark[s] = true;
+		for(int w : adj(s)) {
+			if(!mark[w]) {
+				return dfs(w, s, mark);
+			}else if(w != u) { // 被标记的邻接点不是其递归节点
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public static void main(String[] args) {
+		int[] graph = {10,5,  0,1,  0,6,  2,3,  5,1,  0,4};
+		SimpleGraph sg = new SimpleGraph(graph);
+		System.out.println("graph is cycle:" + sg.isCycle());
+		
+	}
 
+	
 }
