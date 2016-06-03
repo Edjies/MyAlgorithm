@@ -10,10 +10,10 @@ import java.util.Stack;
  *
  */
 public class DirectedGraph implements Graph {
-	private int V;
-	private int E;
+	protected int V;
+	protected int E;
 	
-	private HashSet<Integer>[] adj;
+	protected HashSet<Integer>[] adj;
 	
 	/**
 	 * 从一个数组中创建一个图</br>
@@ -51,6 +51,7 @@ public class DirectedGraph implements Graph {
 	public Iterable<Integer> adj(int V) {
 		return adj[V];
 	}
+	
 	
 	/**
 	 * 有向图的第一个问题</br>
