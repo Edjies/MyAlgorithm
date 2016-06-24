@@ -1,11 +1,13 @@
 package com.hubble.algorithm.search;
 
-import com.hubble.algorithm.search.BanlanceBST.Node;
-
 /**
  * 用二叉搜索树实现符号表功能</br>
  * 二叉搜索树的特点：</br>
  * &nbsp;&nbsp;1. 一个节点的左子树小于 该节点， 一个节点的右子树大于或等于该节点
+ * API实现思想：</br>
+ * get: 通过key 获取 value</br>
+ * put: 插入或更新一个 key-value对</br>
+ * delete： 删除一个key-value对</br
  * @author hubble
  *
  * @param <Key>
@@ -22,6 +24,7 @@ public class BST <Key extends Comparable<Key>, Value> implements SymbolTable<Key
 		private Node mLeft;
 		private Key key;
 		private Value value;
+		// 以该节点作为根节点时 树的节点数量
 		private int N;
 		
 		public Node(Key key, Value value) {

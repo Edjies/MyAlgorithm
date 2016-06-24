@@ -21,10 +21,13 @@ public class DirectedCicle extends DirectedGraph {
 	
 	// 用于 标记环
 	private Stack<Integer> onCircle;
+	
 	public DirectedCicle(int[] graph) {
 		super(graph);
 		marked = new boolean[V];
 		onCircle = new Stack<Integer>();
+		
+		
 
 	}
 	

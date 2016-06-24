@@ -109,7 +109,12 @@ public class MaxHeap <T extends Comparable<T>>{
 				}
 			}
 			// 交换
-			exch(j, k);
+			if(less(k, j)) {
+				exch(j, k);
+			}else{
+				break;
+			}
+			
 			
 			// 继续下一次下沉操作
 			k = j;

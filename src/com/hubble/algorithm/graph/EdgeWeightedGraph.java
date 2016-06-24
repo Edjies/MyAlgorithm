@@ -29,7 +29,7 @@ public class EdgeWeightedGraph {
 			adj[i] = new ArrayList<>();
 		}
 		
-		for(int i = 2; i < graph.length - 2; i++) {
+		for(int i = 2; i < graph.length - 2; i=i+3) {
 			addEdge(graph[i], graph[i + 1], graph[i + 2]);
 		}
 	}
@@ -100,5 +100,10 @@ public int compareTo(Edge that) {
 		   return -1;
 	   }
 	return 0;
+}
+   
+   @Override
+public String toString() {
+	return v + "->" + w + "  " + weight;
 }
 }

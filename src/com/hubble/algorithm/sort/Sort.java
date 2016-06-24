@@ -15,6 +15,15 @@ public class Sort{
 		bubbleSort(data);
 		analysis.endRun();
 		
+		// 插入排序
+		System.out.println("插入排序：");
+		data = rankArray(100);
+		System.out.println(Arrays.toString(data));
+		analysis.startRun();
+		insertSort(data);
+		System.out.println(Arrays.toString(data));
+		analysis.endRun();
+		
 		// 归并排序
 		System.out.println("归并排序：");
 		data = rankArray(1000000);
@@ -64,6 +73,51 @@ public class Sort{
 			}
 		}
 	}
+	
+	/**
+	 * 插入排序</br>
+	 * 从无序数组中选择第一个元素插入到有序数组的正确位置。 </br>
+	 * 实现：通过不断交换两个元素的位置实现。</br>
+	 * @param data
+	 */
+	public static void insertSort(Integer[] data) {
+		for(int i = 1; i  < data.length; i++) {
+			for(int j = i; j > 0; j--) {
+				// 如果 当前元素小于前一个元素，则交换两者位置
+				if(data[j] < data[j - 1]  ) {
+					exch(data, j, j - 1);
+				}else {
+					break;
+				}
+			}
+		}
+	}
+	
+	/**
+	 * 选择排序</br>
+	 * 从无序数组中选择最小的元素放入无序数组的第一个位置。</br>
+	 * @param data
+	 */
+	public static void selectSort(Integer[] data) {
+		for(int i = 0; i < data.length; i++) {
+			int min = i;
+			// 找到最小元素
+			for(int j = i; j < data.length; j++  ) {
+				if(data[j] < data[min]) {
+					min = j;
+				}
+			}
+			exch(data, i, min);
+		}
+	}
+	
+	public static void exch(Integer[] data, int i, int j) {
+		int t = data[i];
+		data[i] = data[j];
+		data[j] = t;
+	}
+	
+
 
 	
 	private static  Integer[] rankArray() {
